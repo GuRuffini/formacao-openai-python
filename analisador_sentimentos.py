@@ -1,6 +1,7 @@
 from openai import OpenAI
 from dotenv import load_dotenv
 import os
+import openai
 
 load_dotenv()
 
@@ -68,8 +69,18 @@ def analisador_sentimentos(produto):
         texto_resposta = resposta.choices[0].message.content
         salva(f"./dados/analise-{produto}.txt", texto_resposta)
         print(f"Análise concluída e salva em './dados/analise-{produto}.txt'")
-    except Exception as e:
+    except openai.AuthenticationError as e:
+        print(f"Erro de autenticação com o OpenAI: {e}")
+    except openai.APIError as e:
         print(f"Erro ao processar a análise de sentimentos: {e}")
+    except ValueError as e:
+        print(f"Erro nos parâmetros de entrada: {e}")
+    except Exception as e:
+        print(f"Ocorreu um erro inesperado: {e}")
 
 
-analisador_sentimentos("Maquiagem mineral")
+lista_de_produtos = ["Camisetas de algodão orgânico", "Jeans feitos com materiais reciclados", "Maquiagem mineral"]
+
+for um_produto in lista_de_produtos:
+    analisador_sentimentos(um_produto)
+
