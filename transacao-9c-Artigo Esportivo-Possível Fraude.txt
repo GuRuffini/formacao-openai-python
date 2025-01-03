@@ -1,0 +1,7 @@
+```json
+{
+    "recomendacao": "Acionar setor Anti-Fraude",
+    "classificacao_tipo_fraude": "Transação Suspeita de Alto Valor",
+    "justificativa": "O valor elevado da transação (R$1103,00) combinado com a hora atípica e a possibilidade de ausência de histórico de compras semelhantes no perfil do cliente indica um risco elevado. É fundamental investigar a autenticidade da transação antes de qualquer autorização."
+}
+```
