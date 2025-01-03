@@ -5,7 +5,7 @@ import os
 load_dotenv()
 
 cliente = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-modelo = "gpt-4o"
+modelo = "gpt-4o-mini"
 
 def categoriza_produto(nome_produto, lista_categorias_possiveis):
     prompt_sistema = f"""

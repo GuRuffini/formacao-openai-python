@@ -17,7 +17,7 @@ resposta = cliente.chat.completions.create(
             "content" :"Liste 3 produtos sustentáveis"
         }
     ],
-    model="gpt-4o"
+    model="gpt-4o-mini"
 )
 
 print(resposta.choices[0].message.content)
